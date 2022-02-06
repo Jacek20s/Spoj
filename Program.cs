@@ -11,7 +11,52 @@ namespace Spoj
         static void Main(string[] args)
         {
             //Polowa();
+            //LiczbyPierwsze();
             Console.ReadKey();
+        }
+
+        private static void LiczbyPierwsze()
+        {
+            int a = int.Parse(Console.ReadLine());
+            int[] lista = new int[a];
+            for (int i = 0; i < a; i++)
+            {
+                int b = int.Parse(Console.ReadLine());
+                lista[i] = b;
+            }
+
+            for (int j = 0; j < a; j++)
+            {
+                int m = 0;
+
+
+
+                if (lista[j] < 2)
+                {
+                    Console.WriteLine("NIE");
+
+                }
+                else
+                {
+                    for (int k = 2; k * k <= lista[j]; k++)
+                    {
+                        if (lista[j] % k == 0)
+                        {
+                            Console.WriteLine("NIE");
+                            m = 1;
+                            break;
+
+                        }
+                    }
+
+                    if (m == 0)
+                    {
+                        Console.WriteLine("TAK");
+                    }
+
+                }
+
+            }
         }
 
         private static void Polowa()
