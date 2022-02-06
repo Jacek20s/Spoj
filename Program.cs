@@ -10,8 +10,13 @@ namespace Spoj
     {
         static void Main(string[] args)
         {
-            int a;
-            a=int.Parse(Console.ReadLine());
+            //Polowa();
+            Console.ReadKey();
+        }
+
+        private static void Polowa()
+        {
+            int a = int.Parse(Console.ReadLine());
             string b;
             int c;
             string[] tablica = new string[a];
@@ -20,13 +25,12 @@ namespace Spoj
             {
                 b = Console.ReadLine();
                 c = b.Length / 2;
-                tablica[i] = b.Substring(0,c);
+                tablica[i] = b.Substring(0, c);
             }
             for (int j = 0; j < tablica.Length; j++)
             {
                 Console.WriteLine(tablica[j]);
             }
-            Console.ReadKey();
         }
     }
 }
