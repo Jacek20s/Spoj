@@ -10,8 +10,23 @@ namespace Spoj
             //Polowa();
             //LiczbyPierwsze();
             //DwieCyfrySilni();
+            
 
             Console.ReadKey();
+        }
+
+        public static int Silnia(int n)
+        {
+            int silnia;
+            if (n<2)
+            {
+               return silnia = 1;
+            }
+
+            silnia = n * Silnia(n - 1);
+
+            return silnia;
+            
         }
 
         private static void DwieCyfrySilni()
@@ -24,15 +39,13 @@ namespace Spoj
             char[] jednostki = new char[b];
             char[] dziesiatki = new char[b];
 
+
             for (int i = 0; i < b; i++)
             {
                 a = int.Parse(Console.ReadLine());
 
-                for (int k = a; k > 1; k--)
-                {
-                    silnia *= k;
-                }
 
+                silnia = Silnia(a);
                 zsilnia = silnia.ToString();
                 jednostki[i] = zsilnia[zsilnia.Length - 1];
                 if (silnia > 10)
