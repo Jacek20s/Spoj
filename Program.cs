@@ -10,23 +10,71 @@ namespace Spoj
             //Polowa();
             //LiczbyPierwsze();
             //DwieCyfrySilni();
-            
+            //ParzysteNieparzyste();
 
             Console.ReadKey();
+        }
+
+        private static void ParzysteNieparzyste()
+        {
+            int a = int.Parse(Console.ReadLine());
+            for (int i = 0; i < a; i++)
+            {
+                int b = int.Parse(Console.ReadLine());
+                int[] tab = new int[b];
+                int[] tab1 = new int[b];
+                int c = 0;
+                for (int j = 0; j < b; j++)
+                {
+                    tab[j] = int.Parse(Console.ReadLine());
+
+
+                }
+                for (int l = 0; l < b; l++)
+                {
+
+                    if (tab[l] % 2 == 0)
+                    {
+                        tab1[c] = tab[l];
+                        c++;
+                    }
+
+                }
+                for (int m = 0; m < b; m++)
+                {
+
+                    if (tab[m] % 2 != 0)
+                    {
+                        tab1[c] = tab[m];
+                        c++;
+                    }
+
+                }
+
+                for (int k = 0; k < b - 1; k++)
+                {
+                    Console.Write(tab1[k] + " ");
+
+
+                }
+                Console.WriteLine(tab1[b - 1]);
+
+
+            }
         }
 
         public static int Silnia(int n)
         {
             int silnia;
-            if (n<2)
+            if (n < 2)
             {
-               return silnia = 1;
+                return silnia = 1;
             }
 
             silnia = n * Silnia(n - 1);
 
             return silnia;
-            
+
         }
 
         private static void DwieCyfrySilni()
