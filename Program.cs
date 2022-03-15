@@ -1,4 +1,5 @@
 ﻿using System;
+using System.Collections.Generic;
 
 namespace Spoj
 {
@@ -11,8 +12,44 @@ namespace Spoj
             //LiczbyPierwsze();
             //DwieCyfrySilni();
             //ParzysteNieparzyste();
+            //Suma();
 
             Console.ReadKey();
+        }
+
+        private static void Suma()
+        {
+            int a;
+            string b;
+            List<int> lista = new List<int>();
+            do
+            {
+
+                b = Console.ReadLine();
+                if (b != string.Empty)
+                {
+                    a = int.Parse(b);
+                    lista.Add(a);
+                }
+
+
+            } while (b != string.Empty);
+
+
+            for (int i = 0; i < lista.Count; i++)
+            {
+                int c = lista.Count;
+                int wynik = 0;
+                int j = 0;
+                do
+                {
+
+                    wynik += lista[j];
+
+                    j++; ;
+                } while (j <= i);
+                Console.WriteLine(wynik);
+            }
         }
 
         private static void ParzysteNieparzyste()
